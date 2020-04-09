@@ -99,3 +99,40 @@ varIBottom = \relative c' {
     \midi {}
   }
 }
+
+varII = \relative c' {
+  \key c \minor
+  \time 2/4
+  \repeat volta 2 {
+    \bar ".|:"
+  c-. \f ^\markup \italic "full orchestra" c-. es-. es-. g-. g-. es4^\tenuto |
+  f8-. f-. d-. d-. b-. b-. g4 ^\tenuto | \break
+  <<
+    { 
+      \once \override DynamicText #'X-offset = #'-2
+      aes'8-. ^\p ^\markup \italic "first violins" aes-. 
+      c-. c-. es-. es-. aes4^\tenuto 
+    }
+    \\
+    { 
+      \once \override DynamicText #'X-offset = #'-2
+      c,,16-. \p _\markup \italic "second violins" es-. \repeat unfold  7 { c16-. es-. } }
+  >>
+  d'8-. d-. d16 (es f d) |
+  es8-. es-. es-. r8
+  }
+}
+
+
+\book {
+  \paper {
+    #(set-paper-size "size 8-1.5")
+    print-page-number = ##f
+    indent = 0 \in
+  }
+  \score {
+    \new Staff  \varII
+    \layout {}
+    \midi {}
+  }
+}
