@@ -1,0 +1,3 @@
+[submodule "lilypond_paper_sizes"]
+	path = lilypond_paper_sizes
+	url = https://github.com/musicologyman-lilypond/lilypond_paper_sizes.git

@@ -4,4 +4,5 @@
 *.midi
 *.m4a
 *.swp
+*.*~
 .ipynb_checkpoints

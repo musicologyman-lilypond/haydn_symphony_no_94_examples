@@ -1,6 +1,6 @@
-\version "2.20.0"
+\version "2.24.0"
 
-\include "./../lilypond-page-sizes/paper-sizes.ily"
+\include "../lilypond_paper_sizes/paper_sizes.ily"
 
 \header {
   tagline = ##f
@@ -103,18 +103,18 @@ varIITop = \relative c' {
   \key c \minor
   \time 2/4
   \repeat volta 2 {
-    \bar ".|:"
+    \bar ".|:-|"
     c-. \f ^\markup \italic "full orchestra" c-. es-. es-. g-. g-. es4^\tenuto |
     f8-. f-. d-. d-. b-. b-. g4 ^\tenuto | \break
     <<
       {
-        \once \override DynamicText #'X-offset = #'-2
+        \once \override DynamicText.X-offset = #'-2
         aes'8-. ^\p ^\markup \italic "first violins" aes-.
         c-. c-. es-. es-. aes4^\tenuto
       }
       \\
       {
-        \once \override DynamicText #'X-offset = #'-2
+        \once \override DynamicText.X-offset = #'-2
         c,,16-. \p _\markup \italic "second violins" es-. \repeat unfold  7 { c16-. es-. }
       }
     >>
@@ -128,7 +128,7 @@ varIITop = \relative c' {
   f'16 (es!32 des c bes aes g) f16 f'32 g aes16 f | \break
   c'16 (bes!32 aes! g f e d)  c16 g'32 aes bes16 g |
   \stopStaff
-  \once \override TextScript #'Y-offset = #0
+  \once \override TextScript.Y-offset = #0
   s32 ^\markup \italic "etc."
 }
 
@@ -137,13 +137,13 @@ varIIBottom = \relative es {
   \key c \minor
   \time 2/4
   \repeat volta 2 { s2 * 8 }
-  \once \override DynamicText #'X-offset = #-2.0
+  \once \override DynamicText.X-offset = #-2.0
   es8-. \f _\markup \italic "lower strings" es-. <g bes>-. <g bes>-. |
   bes-. bes-. d-. d-.
   f,-. f-. a-. a-. |
   c-. c-. e-. e-. |
   \stopStaff
-  \once \override TextScript #'Y-offset = #0
+  \once \override TextScript.Y-offset = #0
   s32 ^\markup \italic "etc."
 }
 
@@ -186,11 +186,11 @@ varIIITop = \relative c' {
 
 varIIIBottom = \relative c' {
   \time 2/4
-  \override Staff.Clef #'color = #grey
-  \override Stem #'color = #grey
-  \override Beam #'color = #grey
-  \override NoteHead #'color = #grey
-  \override TextScript #'color = #grey
+  \override Staff.Clef.color = #grey
+  \override Stem.color = #grey
+  \override Beam.color = #grey
+  \override NoteHead.color = #grey
+  \override TextScript.color = #grey
   c8-. c-. e-. e-. g-. g-. e4^\tenuto |
   f8-. f-. d-. d-. b-. b-. g4^\tenuto
   c8-. c-. e-. e-. g-. g-. e4^\tenuto
@@ -281,11 +281,11 @@ varIVB = \relative c' {
 
 varIVBBottom = \relative c' {
   \time 2/4
-  \override Staff.Clef #'color = #grey
-  \override Stem #'color = #grey
-  \override Beam #'color = #grey
-  \override NoteHead #'color = #grey
-  \override TextScript #'color = #grey
+  \override Staff.Clef.color = #grey
+  \override Stem.color = #grey
+  \override Beam.color = #grey
+  \override NoteHead.color = #grey
+  \override TextScript.color = #grey
   c8-. c-. e-. e-. g-. g-. e4^\tenuto |
   f8-. f-. d-. d-. b-. b-. g4^\tenuto
 }
@@ -309,7 +309,7 @@ varIVBBottom = \relative c' {
 varIVC = \relative d''' {
   \time 2/4
   d16-. \f f,-. d'-. f,-. c'-. e,-. c'-. e,-. |
-  \once \override Beam #'positions = #'( -5 . -5 )
+  \once \override Beam.positions = #'( -5 . -5 )
   b' [g,32 g] g16 g g g g g
 }
 
